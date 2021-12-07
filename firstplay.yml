@@ -12,3 +12,16 @@
         service:
           name: apache2
           state: started
+---
+- name: playbook2
+  hosts: all
+  become: yes
+  tasks:
+    - name: this file is for sample
+      apt:
+        name: apache2
+        state: latest
+   - name: besure apache2 is running
+     service:
+       name: apache2
+       state: started
